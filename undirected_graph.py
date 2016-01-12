@@ -22,3 +22,9 @@ class UndirectedGraph:
 
     def get_random_node(self):
         return random.choice(self.nodes)
+
+    def neighbours_of(self, node: Node):
+        # Not exactly efficient but it'll do
+        return filter(
+            lambda edge: edge.node1 == node or edge.node2 == node,
+            self.edges)
