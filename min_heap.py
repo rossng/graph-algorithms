@@ -33,7 +33,7 @@ class MinHeap:
         parent = (i, self.__get(i))
 
         smallest = min(left, right, parent,
-                       key=lambda n: self.get_key(n[1]) if n[1] else float('inf'))
+                       key=lambda n: self.get_key(n[1]) if n[1] and self.get_key(n[1]) is not None else float('inf'))
 
         if self.get_key(smallest[1]) != self.get_key(parent[1]):
             self.__set(parent[0], smallest[1])
@@ -98,6 +98,6 @@ class MinHeap:
 def set_key(item, key):
     item[0] = key
 
-h = MinHeap([[16], [14], [10], [8], [7], [9], [3], [2], [4], [1]], lambda x: x[0], set_key)
-h.decrease_key(4, 3)
-h.insert([1])
+#h = MinHeap([[16], [14], [10], [8], [7], [9], [3], [2], [4], [1]], lambda x: x[0], set_key)
+#h.decrease_key(4, 3)
+#h.insert([1])
