@@ -2,6 +2,7 @@ from min_heap import MinHeap
 from undirected_graph import UndirectedGraph
 from undirected_graph_examples import graph
 
+# TODO: fix me!
 
 def set_node_distance(node, distance):
     node.distance = distance
